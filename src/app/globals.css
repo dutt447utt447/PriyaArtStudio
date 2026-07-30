@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-pure: #FFFFFF;
+    --bg-linen: #FAF9F6;
+    --accent-gold: #C5A059;
+    --text-dark: #111827;
+    --text-muted: #4B5563;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #FFFFFF;
+    color: #111827;
+    font-family: var(--font-poppins), sans-serif;
+  }
+
+  ::selection {
+    background-color: #C5A059;
+    color: #FFFFFF;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FFFFFF;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D1D5DB;
+    border-radius: 4px;
+    border: 1px solid rgba(197, 160, 89, 0.3);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C5A059;
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #9A7B38 0%, #C5A059 50%, #E6C687 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .border-gold-glow {
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.15);
+  }
+
+  .border-gold-glow:hover {
+    border-color: rgba(197, 160, 89, 0.8);
+    box-shadow: 0 0 25px rgba(197, 160, 89, 0.3);
+  }
+
+  .glass-card-clean {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid #E5E7EB;
+  }
+
+  .gold-shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(197, 160, 89, 0) 0%,
+      rgba(247, 242, 231, 0.6) 50%,
+      rgba(197, 160, 89, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
