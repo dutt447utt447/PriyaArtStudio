@@ -53,12 +53,12 @@ export const COLLECTIONS = [
   },
   {
     id: "ring-platter-floral",
-    title: "Bespoke Floral Ring Exchange Tray",
+    title: "Pinky & Sunil - Bespoke Floral Ring Exchange Tray",
     category: "Ring Ceremony Platters",
-    description: "Luxury handcrafted ring tray with crystal clear floral resin base, gold leaf veins, and velvet rose ring holders for wedding ring ceremonies in Rohtak.",
+    description: "Real handcrafted ring platter featuring a golden floral hoop with red & white roses, gold 'Pinky & Sunil' couple name plaque, pearl border rim, and velvet rose ring holders.",
     image: "/images/ring-platter-design2.png",
     priceEstimate: "Starting from ₹2,499",
-    highlight: "New Design",
+    highlight: "Bespoke Couple Special",
     popular: true,
   },
   {
@@ -103,10 +103,10 @@ export const GALLERY_ITEMS = [
   },
   {
     id: "gal-2",
-    title: "Royal Engagement Ring Platter (Parvesh & Priya)",
+    title: "Pinky & Sunil Engagement Ring Platter",
     category: "Ring Ceremony Platters",
-    image: "/images/ring-platter.png",
-    caption: "Handcrafted ring platter with floral hoop, gold couple names & velvet rose ring holders.",
+    image: "/images/ring-platter-design2.png",
+    caption: "Handcrafted ring platter with floral hoop, gold 'Pinky & Sunil' couple names & velvet rose ring holders.",
   },
   {
     id: "gal-3",
@@ -133,7 +133,7 @@ export const GALLERY_ITEMS = [
     id: "gal-6",
     title: "Floral Engagement Ring Exchange Tray",
     category: "Ring Ceremony Platters",
-    image: "/images/ring-platter-design2.png",
+    image: "/images/ring-platter.png",
     caption: "Golden floral hoop with red & white roses for engagement ring exchange ceremonies.",
   },
 ];
@@ -168,11 +168,11 @@ export const PROCESS_STEPS = [
 export const TESTIMONIALS = [
   {
     id: 1,
-    name: "Parvesh & Priya",
+    name: "Pinky & Sunil",
     location: "Rohtak, Haryana",
     rating: 5,
     tag: "Ring Ceremony Platter in Rohtak",
-    text: "Priya Kalher created our engagement ring platter in Rohtak with our names engraved in gold and red roses! Everyone at our ring ceremony was mesmerized. Truly talented artist!",
+    text: "Priya Kalher created our engagement ring platter in Rohtak with our names 'Pinky & Sunil' engraved in gold and red roses! Everyone at our ring ceremony was mesmerized. Truly talented artist!",
     date: "July 2026",
   },
   {
@@ -210,7 +210,7 @@ export const FAQS = [
     answer: "Our studio is located at 924/25 Jagdish Colony, Near Shiksha Bharti School, Rohtak, Haryana 124001. You can visit Priya Kalher in person or send your wedding flowers via courier.",
   },
   {
-    question: "How do I book a Ring Ceremony Platter in Rohtak?",
+    question: "How do I book a Ring Ceremony Platter for Pinky & Sunil style in Rohtak?",
     answer: "You can order a custom engagement ring platter with your names engraved in gold, velvet ring boxes, and floral hoops directly by messaging Priya Kalher on WhatsApp (+91 7082450846).",
   },
   {
