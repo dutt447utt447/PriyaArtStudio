@@ -34,7 +34,7 @@ export function Footer() {
             </div>
 
             <p className="font-body text-xs text-stone-600 font-normal leading-relaxed max-w-sm">
-              Luxury handmade resin art studio specializing in wedding varmala preservation, royal pooja thalis, marble resin clocks, and bespoke floral keepsakes by Priya Ahalawat.
+              Luxury handmade resin art studio specializing in wedding varmala preservation, royal pooja thalis, marble resin clocks, and bespoke floral keepsakes by Priya Kalher.
             </p>
 
             <div className="flex items-center gap-3 pt-2">
@@ -117,7 +117,7 @@ export function Footer() {
           <p className="flex items-center gap-1">
             <span>Handcrafted with</span>
             <Heart className="w-3.5 h-3.5 text-stone-900 fill-stone-900" />
-            <span>by Priya Ahalawat</span>
+            <span>by Priya Kalher</span>
           </p>
         </div>
       </div>

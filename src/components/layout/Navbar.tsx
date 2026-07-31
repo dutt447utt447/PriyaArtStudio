@@ -36,7 +36,7 @@ export function Navbar() {
   ];
 
   const aboutMenu = [
-    { name: "About Priya Kalher", href: "#about", desc: "Meet the senior resin artist in Rohtak" },
+    { name: "About Priya Kalher", href: "#about", desc: "Meet the lead resin artist in Rohtak" },
     { name: "Why Choose Our Studio", href: "#process", desc: "100% Handcrafted & Anti-Yellowing" },
   ];
 

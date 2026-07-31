@@ -21,11 +21,11 @@ export function AboutSection() {
           >
             <div className="relative mx-auto max-w-[380px] lg:max-w-none space-y-4">
               
-              {/* Main Portrait Box */}
+              {/* Main Working Action Image */}
               <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-luxury border-2 border-gold-accent/40 group bg-white">
                 <Image
-                  src="/images/priya-portrait.png"
-                  alt="Priya Kalher in studio crafting resin art"
+                  src="/images/priya-working.png"
+                  alt="Priya Kalher handcrafting resin art in studio"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -37,36 +37,36 @@ export function AboutSection() {
                     Priya Kalher • Lead Resin Artist
                   </p>
                   <p className="font-body text-xs text-stone-600 font-medium">
-                    Handcrafting Luxury Keepsakes in Rohtak Studio
+                    Hand-Pouring & Preserving Flowers in Rohtak Studio
                   </p>
                 </div>
               </div>
 
-              {/* Working Photo Highlight Grid */}
+              {/* Alternative Photo Highlight Grid */}
               <div className="grid grid-cols-2 gap-3">
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-card border border-stone-200 group">
                   <Image
-                    src="/images/priya-working.png"
-                    alt="Priya Kalher working on resin project"
+                    src="/images/priya-portrait.png"
+                    alt="Priya Kalher Studio Portrait"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-stone-900/30 group-hover:bg-transparent transition-colors" />
                   <div className="absolute bottom-2 left-2 p-1.5 rounded-lg bg-white/90 text-[10px] font-button font-bold text-stone-900">
-                    Hand-Pouring Resin
+                    Studio Portrait
                   </div>
                 </div>
 
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-card border border-stone-200 group">
                   <Image
-                    src="/images/ring-platter.png"
-                    alt="Priya Kalher Handcrafted Ring Ceremony Platter"
+                    src="/images/priya-resin-design.png"
+                    alt="Priya Kalher with handcrafted resin art design"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-stone-900/30 group-hover:bg-transparent transition-colors" />
                   <div className="absolute bottom-2 left-2 p-1.5 rounded-lg bg-white/90 text-[10px] font-button font-bold text-stone-900">
-                    Ring Ceremony Art
+                    Resin Art Design
                   </div>
                 </div>
               </div>
@@ -94,7 +94,7 @@ export function AboutSection() {
 
             <div className="space-y-4 font-body text-sm sm:text-base text-stone-700 leading-relaxed font-normal mb-8">
               <p>
-                Hi, I am <strong className="text-stone-900 font-bold">Priya Kalher</strong>, the founder, senior resin artist, and creative soul behind Priya Art Studio. What started as a passion for fine arts and floral preservation has evolved into Rohtak's leading studio dedicated to capturing life's most precious emotional milestones.
+                Hi, I am <strong className="text-stone-900 font-bold">Priya Kalher</strong>, the founder, lead resin artist, and creative soul behind Priya Art Studio. What started as a passion for fine arts and floral preservation has evolved into Rohtak's leading studio dedicated to capturing life's most precious emotional milestones.
               </p>
               <p>
                 A wedding varmala or ring ceremony platter isn't just an object—it carries the promises, laughter, and sacred blessings of your special day. My mission is to treat every flower with delicate reverence, dehydrating, arranging, and encasing them in crystal clear resin so your memories never fade.
@@ -127,7 +127,7 @@ export function AboutSection() {
             <div className="flex flex-wrap items-center gap-6 pt-2">
               <div>
                 <p className="font-heading text-2xl italic text-stone-900 font-bold">Priya Kalher</p>
-                <p className="font-body text-xs text-gold-dark tracking-widest uppercase font-bold">Senior Resin Artist & Founder</p>
+                <p className="font-body text-xs text-gold-dark tracking-widest uppercase font-bold">Lead Resin Artist & Founder</p>
               </div>
 
               <a

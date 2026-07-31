@@ -29,7 +29,7 @@ export function WhyChooseUs() {
     {
       icon: HeartHandshake,
       title: "Direct Artist Interaction",
-      description: "Communicate directly with senior artist Priya on WhatsApp for regular design updates and WIP pictures.",
+      description: "Communicate directly with artist Priya on WhatsApp for regular design updates and WIP pictures.",
     },
     {
       icon: Sparkles,

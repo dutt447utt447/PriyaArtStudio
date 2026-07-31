@@ -66,7 +66,7 @@ export function HeroSection() {
 
             {/* Description Body Copy */}
             <p className="font-body text-sm sm:text-base text-stone-600 max-w-xl leading-relaxed mb-8 font-normal">
-              Welcome to Rohtak's premier resin art studio by Senior Artist Priya Ahalawat. Hand-poured at Jagdish Colony with optical UV resin, gold leaves, and real preserved bridal flowers—creating bespoke wedding varmala blocks, ring ceremony platters, resin wall clocks, and pooja thalis.
+              Welcome to Rohtak's premier resin art studio by Lead Artist Priya Kalher. Hand-poured at Jagdish Colony with optical UV resin, gold leaves, and real preserved bridal flowers—creating bespoke wedding varmala blocks, ring ceremony platters, resin wall clocks, and pooja thalis.
             </p>
 
             {/* Action Call to Buttons */}
@@ -127,7 +127,7 @@ export function HeroSection() {
               <div className="relative w-full h-full rounded-2xl overflow-hidden group">
                 <Image
                   src="/images/priya-portrait.png"
-                  alt="Priya Ahalawat - Senior Resin Artist in Rohtak"
+                  alt="Priya Kalher - Lead Resin Artist in Rohtak"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   priority
@@ -137,7 +137,7 @@ export function HeroSection() {
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-white/95 backdrop-blur-md border border-stone-200 shadow-md">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="font-subheading text-base font-bold text-stone-900">Priya Ahalawat</p>
+                      <p className="font-subheading text-base font-bold text-stone-900">Priya Kalher</p>
                       <p className="font-body text-xs font-medium text-stone-600">Lead Resin Artist • Rohtak, Haryana</p>
                     </div>
                     <div className="flex items-center gap-1 text-gold-accent">
