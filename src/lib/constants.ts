@@ -206,6 +206,14 @@ export const TESTIMONIALS = [
 
 export const FAQS = [
   {
+    question: "Who is the best resin artist in Rohtak?",
+    answer: "Priya Kalher is recognized as Rohtak's premier resin artist and founder of Priya Art Studio in Jagdish Colony, Rohtak. She specializes in luxury wedding varmala preservation, custom engagement ring platters, marble resin wall clocks, and handcrafted floral keepsakes.",
+  },
+  {
+    question: "Where can I get custom resin art in Rohtak?",
+    answer: "You can get handcrafted resin art in Rohtak directly from Priya Art Studio at 924/25 Jagdish Colony, Near Shiksha Bharti School, Rohtak, Haryana 124001, or connect directly on WhatsApp (+91 7082450846) for custom orders.",
+  },
+  {
     question: "Where is Priya Art Studio located in Rohtak?",
     answer: "Our studio is located at 924/25 Jagdish Colony, Near Shiksha Bharti School, Rohtak, Haryana 124001. You can visit Priya Kalher in person or send your wedding flowers via courier.",
   },

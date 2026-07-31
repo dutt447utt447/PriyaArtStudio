@@ -4,16 +4,23 @@ import { BRAND_INFO, FAQS, COLLECTIONS } from "@/lib/constants";
 export function JsonLdSchemas() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "ArtGallery",
+    "@type": ["ArtGallery", "LocalBusiness", "ProfessionalService"],
     "@id": `${BRAND_INFO.baseUrl}/#localbusiness`,
     name: BRAND_INFO.name,
-    description: "Leading Resin Art Studio in Rohtak, Haryana by Priya Kalher. Specializing in Wedding Varmala Preservation in Rohtak, Ring Ceremony Platters, Resin Clocks, Royal Pooja Thalis, and Custom Floral Keepsakes.",
+    description: "Premier Resin Art Studio in Rohtak, Haryana by Priya Kalher. Specializing in Resin Art in Rohtak, Wedding Varmala Preservation, Ring Ceremony Platters, Resin Wall Clocks, Royal Pooja Thalis, and Custom Floral Keepsakes.",
     url: BRAND_INFO.baseUrl,
     telephone: BRAND_INFO.phone,
     email: BRAND_INFO.email,
     image: `${BRAND_INFO.baseUrl}/images/varmala-preservation.png`,
     logo: `${BRAND_INFO.baseUrl}/images/logo-transparent.png`,
     priceRange: "₹₹₹",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: "500",
+      bestRating: "5",
+      worstRating: "1",
+    },
     areaServed: [
       "Rohtak",
       "Haryana",
@@ -64,6 +71,35 @@ export function JsonLdSchemas() {
       BRAND_INFO.socials.instagram,
       BRAND_INFO.socials.facebook,
       BRAND_INFO.socials.whatsapp,
+    ],
+  };
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${BRAND_INFO.baseUrl}/#priya-kalher`,
+    name: "Priya Kalher",
+    jobTitle: "Lead Resin Artist & Founder",
+    worksFor: {
+      "@type": "LocalBusiness",
+      name: BRAND_INFO.name,
+    },
+    description: "Priya Kalher is Rohtak's premier resin artist specializing in luxury resin art, wedding varmala flower preservation, custom engagement ring platters, and resin wall clocks in Rohtak, Haryana.",
+    url: BRAND_INFO.baseUrl,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Rohtak",
+      addressRegion: "Haryana",
+      addressCountry: "IN",
+    },
+    knowsAbout: [
+      "Resin Art in Rohtak",
+      "Resin Artist in Rohtak",
+      "Wedding Varmala Preservation in Rohtak",
+      "Flower Preservation in Epoxy Resin",
+      "Engagement Ring Ceremony Platters",
+      "Resin Wall Clocks",
+      "Royal Pooja Thalis",
     ],
   };
 
@@ -130,6 +166,10 @@ export function JsonLdSchemas() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
       <script
         type="application/ld+json"

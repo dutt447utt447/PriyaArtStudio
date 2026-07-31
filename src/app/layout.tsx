@@ -35,15 +35,17 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL(BRAND_INFO.baseUrl),
   title: {
-    default: "Resin Art in Rohtak | Varmala Preservation & Custom Resin Clocks | Priya Art Studio",
+    default: "Resin Artist in Rohtak | Luxury Resin Art & Varmala Preservation | Priya Art Studio",
     template: "%s | Priya Art Studio Rohtak",
   },
   description:
-    "Leading Resin Art Studio in Rohtak, Haryana by Priya Kalher. Specializing in Wedding Varmala Preservation in Rohtak, Ring Ceremony Platters, Resin Wall Clocks, & Royal Pooja Thalis. Located at Jagdish Colony, Rohtak.",
+    "Premier Resin Artist in Rohtak, Haryana — Priya Kalher. Handcrafting luxury Resin Art in Rohtak, Wedding Varmala Flower Preservation, Ring Ceremony Platters, Resin Wall Clocks & Pooja Thalis in Jagdish Colony, Rohtak.",
   keywords: [
-    "Resin Art in Rohtak",
     "Resin Artist in Rohtak",
+    "Best Resin Artist in Rohtak",
+    "Resin Art in Rohtak",
     "Priya Kalher Resin Artist",
+    "Resin Art Studio Rohtak",
     "Varmala Preservation in Rohtak",
     "Wedding Varmala Preservation Haryana",
     "Resin Clock in Rohtak",
@@ -53,7 +55,7 @@ export const metadata: Metadata = {
     "Wedding Invitation Preservation Rohtak",
     "Custom Floral Keepsakes Haryana",
     "Priya Art Studio Rohtak",
-    "Resin Name Plate Rohtak",
+    "Jagdish Colony Rohtak Resin Studio",
   ],
   authors: [{ name: "Priya Kalher", url: BRAND_INFO.baseUrl }],
   creator: "Priya Kalher",
@@ -64,9 +66,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Resin Art in Rohtak | Varmala Preservation & Custom Resin Clocks",
+    title: "Resin Artist in Rohtak | Resin Art & Varmala Preservation | Priya Art Studio",
     description:
-      "Crafting memories into timeless art in Rohtak, Haryana by Priya Kalher. Bespoke wedding varmala preservation, ring ceremony platters, resin clocks & luxury pooja thalis.",
+      "Looking for the best Resin Artist in Rohtak? Priya Kalher creates luxury resin art, wedding varmala blocks, ring platters & resin clocks in Rohtak, Haryana.",
     url: BRAND_INFO.baseUrl,
     siteName: BRAND_INFO.name,
     images: [
@@ -74,7 +76,7 @@ export const metadata: Metadata = {
         url: "/images/varmala-preservation.png",
         width: 1200,
         height: 630,
-        alt: "Priya Art Studio Wedding Varmala Preservation Rohtak",
+        alt: "Priya Art Studio - Best Resin Artist in Rohtak",
       },
     ],
     locale: "en_IN",
@@ -82,9 +84,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Resin Art in Rohtak | Varmala Preservation & Resin Clocks",
+    title: "Resin Artist in Rohtak | Resin Art & Varmala Preservation",
     description:
-      "Crafting memories into timeless art in Rohtak. Bespoke wedding varmala preservation & luxury resin creations by Priya Kalher.",
+      "Premier Resin Artist in Rohtak. Custom wedding varmala preservation & luxury resin creations by Priya Kalher.",
     images: ["/images/varmala-preservation.png"],
   },
   robots: {
@@ -100,6 +102,12 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: BRAND_INFO.baseUrl,
+  },
+  other: {
+    "geo.region": "IN-HR",
+    "geo.placename": "Rohtak, Haryana, India",
+    "geo.position": "28.8955;76.5912",
+    "ICBM": "28.8955, 76.5912",
   },
 };
 
