@@ -27,23 +27,23 @@ export function Navbar() {
   }, []);
 
   const collectionsMenu = [
-    { name: "Wedding Varmala Preservation", href: "#varmala-preservation", desc: "Sacred floral garland resin encapsulation", icon: Heart },
-    { name: "Ring Ceremony Platters", href: "#collections", desc: "Bespoke engagement ring exchange trays", icon: Sparkles },
-    { name: "Royal Resin Pooja Thalis", href: "#collections", desc: "Sacred ritual thalis with gold veins", icon: Award },
-    { name: "Luxury Resin Wall Clocks", href: "#collections", desc: "3D gold numeral statement clocks", icon: Clock },
-    { name: "Wedding Invitation Frames", href: "#collections", desc: "Preserved wedding card plaques", icon: Star },
-    { name: "Custom Gifts & Frames", href: "#collections", desc: "Personalized trays, coasters & photo borders", icon: Sparkles },
+    { name: "Wedding Varmala Preservation", href: "/#varmala-preservation", desc: "Sacred floral garland resin encapsulation", icon: Heart },
+    { name: "Ring Ceremony Platters", href: "/#collections", desc: "Bespoke engagement ring exchange trays", icon: Sparkles },
+    { name: "Royal Resin Pooja Thalis", href: "/#collections", desc: "Sacred ritual thalis with gold veins", icon: Award },
+    { name: "Luxury Resin Wall Clocks", href: "/#collections", desc: "3D gold numeral statement clocks", icon: Clock },
+    { name: "Wedding Invitation Frames", href: "/#collections", desc: "Preserved wedding card plaques", icon: Star },
+    { name: "Custom Gifts & Frames", href: "/#collections", desc: "Personalized trays, coasters & photo borders", icon: Sparkles },
   ];
 
   const aboutMenu = [
-    { name: "About Priya Kalher", href: "#about", desc: "Meet the lead resin artist in Rohtak" },
-    { name: "Why Choose Our Studio", href: "#process", desc: "100% Handcrafted & Anti-Yellowing" },
+    { name: "About Priya Kalher", href: "/#about", desc: "Meet the lead resin artist in Rohtak" },
+    { name: "Why Choose Our Studio", href: "/#process", desc: "100% Handcrafted & Anti-Yellowing" },
   ];
 
   const experienceMenu = [
-    { name: "Visual Gallery", href: "#gallery", desc: "Browse custom resin creations" },
-    { name: "4-Step Process Timeline", href: "#process", desc: "How to send flowers to Rohtak studio" },
-    { name: "Client Reviews", href: "#testimonials", desc: "Verified stories from real brides" },
+    { name: "Visual Gallery", href: "/#gallery", desc: "Browse custom resin creations" },
+    { name: "4-Step Process Timeline", href: "/#process", desc: "How to send flowers to Rohtak studio" },
+    { name: "Client Reviews", href: "/#testimonials", desc: "Verified stories from real brides" },
   ];
 
   return (
@@ -57,7 +57,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
         {/* Brand Transparent Logo Header */}
-        <Link href="#" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-3 group">
           <div className="relative w-12 h-12 rounded-full overflow-hidden border border-gold-accent/40 bg-stone-900 shadow-sm group-hover:scale-105 transition-transform duration-300">
             <Image
               src="/images/logo-badge.png"
@@ -210,16 +210,23 @@ export function Navbar() {
             </AnimatePresence>
           </div>
 
-          {/* FAQ & Contact Direct Links */}
+          {/* Price Calculator, FAQ & Contact Direct Links */}
           <Link
-            href="#faq"
+            href="/price-calculator"
+            className="text-xs uppercase tracking-widest font-button font-bold text-stone-800 hover:text-gold-dark transition-colors py-1"
+          >
+            Price Calculator
+          </Link>
+
+          <Link
+            href="/#faq"
             className="text-xs uppercase tracking-widest font-button font-bold text-stone-800 hover:text-gold-dark transition-colors py-1"
           >
             FAQ
           </Link>
 
           <Link
-            href="#contact"
+            href="/#contact"
             className="text-xs uppercase tracking-widest font-button font-bold text-stone-800 hover:text-gold-dark transition-colors py-1"
           >
             Contact Studio
@@ -290,7 +297,15 @@ export function Navbar() {
 
               {/* Direct Links */}
               <Link
-                href="#about"
+                href="/price-calculator"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-sm uppercase tracking-widest font-button text-stone-900 font-bold py-2 border-b border-stone-100 flex items-center justify-between"
+              >
+                <span>Price Calculator</span>
+              </Link>
+
+              <Link
+                href="/#about"
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-sm uppercase tracking-widest font-button text-stone-900 font-bold py-2 border-b border-stone-100 flex items-center justify-between"
               >
@@ -298,7 +313,7 @@ export function Navbar() {
               </Link>
 
               <Link
-                href="#gallery"
+                href="/#gallery"
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-sm uppercase tracking-widest font-button text-stone-900 font-bold py-2 border-b border-stone-100 flex items-center justify-between"
               >
@@ -306,7 +321,7 @@ export function Navbar() {
               </Link>
 
               <Link
-                href="#process"
+                href="/#process"
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-sm uppercase tracking-widest font-button text-stone-900 font-bold py-2 border-b border-stone-100 flex items-center justify-between"
               >
@@ -314,7 +329,7 @@ export function Navbar() {
               </Link>
 
               <Link
-                href="#contact"
+                href="/#contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-sm uppercase tracking-widest font-button text-stone-900 font-bold py-2 border-b border-stone-100 flex items-center justify-between"
               >
