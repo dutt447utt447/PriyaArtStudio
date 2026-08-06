@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, Minus, Plus, MessageCircle, AlertTriangle } from "lucide-react";
 import { CategoryPricingConfig } from "@/data/pricing/types";
-import { usePriceCalculator } from "@/hooks/usePriceCalculator";
+import { usePriceCalculator, getBasePrice } from "@/hooks/usePriceCalculator";
 import { PlaceOrderModal } from "./PlaceOrderModal";
 
 function formatCurrency(amount: number) {
@@ -26,9 +26,9 @@ export function CalculatorCore({ config }: CalculatorCoreProps) {
   const [orderModalOpen, setOrderModalOpen] = useState(false);
 
   return (
-    <div className="grid lg:grid-cols-[1fr_380px] gap-8">
+    <div className="grid lg:grid-cols-[1fr_380px] gap-6 lg:gap-8">
       {/* Step flow */}
-      <div className="space-y-8">
+      <div className="space-y-6 sm:space-y-8">
         {config.placeholderPricing && (
           <div className="flex items-start gap-3 p-4 rounded-2xl bg-amber-50 border border-amber-200">
             <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
@@ -43,15 +43,25 @@ export function CalculatorCore({ config }: CalculatorCoreProps) {
         {/* Step 1 — Base */}
         <StepSection stepNumber={1} title={config.baseStepLabel}>
           <OptionGrid>
-            {config.bases.map((base) => (
-              <OptionCard
-                key={base.id}
-                label={base.label}
-                priceLabel={base.price > 0 ? `+${formatCurrency(base.price)}` : "Included"}
-                selected={calc.state.baseId === base.id}
-                onClick={() => calc.setBaseId(base.id)}
-              />
-            ))}
+            {config.bases.map((base) => {
+              const pricedBySize = Boolean(base.priceBySize);
+              const amount = getBasePrice(base, calc.state.sizeId);
+              const priceLabel =
+                pricedBySize && !calc.state.sizeId
+                  ? "Priced by size ↓"
+                  : amount > 0
+                  ? `+${formatCurrency(amount)}`
+                  : "Included";
+              return (
+                <OptionCard
+                  key={base.id}
+                  label={base.label}
+                  priceLabel={priceLabel}
+                  selected={calc.state.baseId === base.id}
+                  onClick={() => calc.setBaseId(base.id)}
+                />
+              );
+            })}
           </OptionGrid>
         </StepSection>
 
@@ -157,7 +167,7 @@ export function CalculatorCore({ config }: CalculatorCoreProps) {
             Shipping charges (if applicable) calculated separately at checkout.
           </p>
 
-          <div className="flex items-end justify-between mb-6">
+          <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between mb-6">
             <span className="font-button text-xs uppercase tracking-widest text-stone-400 font-bold">
               Estimated Total
             </span>
@@ -168,7 +178,7 @@ export function CalculatorCore({ config }: CalculatorCoreProps) {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 6 }}
                 transition={{ duration: 0.25 }}
-                className="font-heading text-3xl sm:text-4xl font-bold text-gold-accent"
+                className="font-heading text-3xl sm:text-4xl font-bold text-gold-accent break-words"
               >
                 {formatCurrency(calc.total)}
               </motion.span>
@@ -231,7 +241,7 @@ function StepSection({
 }
 
 function OptionGrid({ children }: { children: React.ReactNode }) {
-  return <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">{children}</div>;
+  return <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3">{children}</div>;
 }
 
 function OptionCard({
@@ -252,21 +262,23 @@ function OptionCard({
       type="button"
       onClick={onClick}
       aria-pressed={selected}
-      className={`relative text-left p-4 rounded-2xl border transition-all duration-200 ${
+      className={`relative text-left p-3 sm:p-4 rounded-2xl border transition-all duration-200 ${
         selected
           ? "border-gold-accent bg-gold-champagne shadow-md"
           : "border-stone-200 bg-white hover:border-gold-accent/50 hover:bg-cream-linen"
       }`}
     >
       <div
-        className={`absolute top-3 right-3 w-5 h-5 flex items-center justify-center border transition-colors ${
+        className={`absolute top-2.5 right-2.5 sm:top-3 sm:right-3 w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center border transition-colors ${
           multiSelect ? "rounded-md" : "rounded-full"
         } ${selected ? "bg-gold-accent border-gold-accent text-white" : "border-stone-300 bg-white"}`}
       >
         {selected && <Check className="w-3 h-3" />}
       </div>
-      <p className="font-button text-sm font-bold text-stone-900 pr-6 mb-1">{label}</p>
-      <p className="font-body text-xs text-stone-500">{priceLabel}</p>
+      <p className="font-button text-xs sm:text-sm font-bold text-stone-900 pr-5 sm:pr-6 mb-1 leading-snug break-words">
+        {label}
+      </p>
+      <p className="font-body text-[11px] sm:text-xs text-stone-500">{priceLabel}</p>
     </button>
   );
 }

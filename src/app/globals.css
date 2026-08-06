@@ -64,6 +64,14 @@
     border: 1px solid #E5E7EB;
   }
 
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
   .gold-shimmer {
     background: linear-gradient(
       90deg,

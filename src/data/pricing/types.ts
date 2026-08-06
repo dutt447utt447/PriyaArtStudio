@@ -5,7 +5,17 @@
 export interface PricingOption {
   id: string;
   label: string;
+  /** Flat add-on amount. Ignored for base options that set `priceBySize`. */
   price: number;
+  /**
+   * Base-only: some base materials (e.g. a solid resin base) cost more
+   * resin/curing time as the piece gets bigger, so their surcharge isn't a
+   * flat number — it depends on which size the customer picked. When set,
+   * this map (keyed by a `sizes[].id`) is used instead of `price`. If the
+   * customer hasn't picked a size yet, the option shows as "priced by size"
+   * until they do.
+   */
+  priceBySize?: Record<string, number>;
 }
 
 export interface CategoryPricingConfig {

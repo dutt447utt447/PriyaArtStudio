@@ -1,37 +1,39 @@
 import { CategoryPricingConfig } from "./types";
 
-// PLACEHOLDER PRICING — Priya has not confirmed real numbers for this category
-// yet. Structure/labels are inferred from existing site copy (COLLECTIONS in
-// lib/constants.ts). Every price below is 0 and marked TODO — replace with
-// real figures before launch, then flip placeholderPricing to false.
+// Pricing estimated from market research (IndiaMART, ResinVilla, Artsty,
+// CanvasByPriya — handmade resin wedding card preservation frames run
+// roughly ₹800–₹8,000 depending on size/materials, premium ones ₹2,500+).
+// Smallest size is anchored to the "Starting from ₹2,799" already
+// advertised on the homepage collections card. These are informed
+// estimates, not numbers Priya has personally confirmed — please review
+// before treating as final.
 export const weddingInvitationPricing: CategoryPricingConfig = {
   id: "wedding-invitation",
   categoryLabel: "Wedding Invitation Preservation",
   shortDescription: "Preserve your wedding card in an ultra-transparent resin frame.",
-  placeholderPricing: true,
 
   baseStepLabel: "Frame Type",
   bases: [
-    { id: "acrylic", label: "Acrylic Frame", price: 0 }, // TODO: confirm price
-    { id: "wooden", label: "Wooden Frame", price: 0 }, // TODO: confirm price
-    { id: "rosewood", label: "Premium Rosewood Frame", price: 0 }, // TODO: confirm price
+    { id: "acrylic", label: "Acrylic Frame", price: 0 },
+    { id: "wooden", label: "Wooden Frame", price: 400 },
+    { id: "rosewood", label: "Premium Rosewood Frame", price: 900 },
   ],
 
   sizeStepLabel: "Size",
   sizes: [
-    { id: "a5", label: "A5 Frame", price: 0 }, // TODO: confirm price
-    { id: "a4", label: "A4 Frame", price: 0 }, // TODO: confirm price
-    { id: "a3", label: "A3 Frame", price: 0 }, // TODO: confirm price
+    { id: "a5", label: "A5 Frame", price: 2799 },
+    { id: "a4", label: "A4 Frame", price: 3799 },
+    { id: "a3", label: "A3 Frame", price: 4999 },
   ],
 
   addonsStepLabel: "Add-ons",
   addons: [
-    { id: "couplePhoto", label: "Couple Photo Addition", price: 0 }, // TODO: confirm price
-    { id: "nameDateEngrave", label: "Name & Date Engraving", price: 0 }, // TODO: confirm price
-    { id: "goldFoil", label: "Gold Foil Accent", price: 0 }, // TODO: confirm price
-    { id: "giftBox", label: "Gift Box Packaging", price: 0 }, // TODO: confirm price
+    { id: "couplePhoto", label: "Couple Photo Addition", price: 400 },
+    { id: "nameDateEngrave", label: "Name & Date Engraving", price: 250 },
+    { id: "goldFoil", label: "Gold Foil Accent", price: 350 },
+    { id: "giftBox", label: "Gift Box Packaging", price: 300 },
   ],
 
   disclaimer:
-    "Pricing for this category is not finalized yet. Final price may vary based on design complexity — please confirm with Priya on WhatsApp.",
+    "Final price may vary slightly based on actual design complexity and finish. This is an estimate.",
 };

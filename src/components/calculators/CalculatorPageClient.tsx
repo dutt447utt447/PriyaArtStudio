@@ -37,15 +37,15 @@ export function CalculatorPageClient() {
   const activeConfig = PRICING_REGISTRY[activeId];
 
   return (
-    <div className="min-h-screen bg-cream-linen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 sm:pt-40 pb-20">
+    <div className="min-h-screen bg-cream-linen overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-40 pb-28 sm:pb-20">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-stone-900 text-gold-accent text-xs tracking-widest font-button font-bold uppercase mb-5">
             <Calculator className="w-3.5 h-3.5" />
             <span>Instant Price Estimate</span>
           </div>
-          <h1 className="font-heading text-4xl sm:text-5xl font-bold text-stone-900 mb-4">
+          <h1 className="font-heading text-3xl sm:text-5xl font-bold text-stone-900 mb-4">
             Price <span className="text-gold-gradient italic">Calculator</span>
           </h1>
           <p className="font-body text-sm sm:text-base text-stone-500 leading-relaxed">
@@ -54,27 +54,30 @@ export function CalculatorPageClient() {
           </p>
         </div>
 
-        {/* Category selector */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {PRICING_CATEGORIES.map((cat) => (
-            <button
-              key={cat.id}
-              type="button"
-              onClick={() => handleSelect(cat.id)}
-              className={`px-5 py-3 rounded-2xl border font-button text-xs sm:text-sm font-bold uppercase tracking-wide transition-all duration-200 ${
-                activeId === cat.id
-                  ? "bg-stone-900 border-stone-900 text-white shadow-luxury"
-                  : "bg-white border-stone-200 text-stone-700 hover:border-gold-accent hover:text-gold-dark"
-              }`}
-            >
-              {cat.categoryLabel}
-            </button>
-          ))}
+        {/* Category selector — horizontal scroll on mobile so it never wraps
+            into a wall of buttons, wraps to a centered row from sm+ */}
+        <div className="-mx-4 px-4 sm:mx-0 sm:px-0 mb-10 sm:mb-12">
+          <div className="no-scrollbar flex sm:flex-wrap sm:justify-center gap-2.5 sm:gap-3 overflow-x-auto sm:overflow-visible pb-2 sm:pb-0 snap-x snap-mandatory">
+            {PRICING_CATEGORIES.map((cat) => (
+              <button
+                key={cat.id}
+                type="button"
+                onClick={() => handleSelect(cat.id)}
+                className={`flex-shrink-0 snap-start px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl border font-button text-xs sm:text-sm font-bold uppercase tracking-wide transition-all duration-200 whitespace-nowrap ${
+                  activeId === cat.id
+                    ? "bg-stone-900 border-stone-900 text-white shadow-luxury"
+                    : "bg-white border-stone-200 text-stone-700 hover:border-gold-accent hover:text-gold-dark"
+                }`}
+              >
+                {cat.categoryLabel}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Active category description */}
         {activeConfig.shortDescription && (
-          <p className="text-center font-body text-sm text-stone-500 -mt-6 mb-10 max-w-xl mx-auto">
+          <p className="text-center font-body text-sm text-stone-500 -mt-4 sm:-mt-6 mb-8 sm:mb-10 max-w-xl mx-auto px-2">
             {activeConfig.shortDescription}
           </p>
         )}

@@ -15,6 +15,19 @@ export interface PriceCalculatorState {
   quantity: number;
 }
 
+/**
+ * Resolves a base option's surcharge for a given size. Most bases are a
+ * flat add-on (`price`); a base with `priceBySize` (e.g. a solid resin
+ * base) instead costs more as the size goes up, and resolves to 0 until a
+ * size is chosen — use `isPricedBySize` to tell "genuinely free" apart from
+ * "not priceable yet" in the UI.
+ */
+export function getBasePrice(base: PricingOption | null, sizeId: string | null): number {
+  if (!base) return 0;
+  if (base.priceBySize) return sizeId ? base.priceBySize[sizeId] ?? 0 : 0;
+  return base.price;
+}
+
 export interface PriceCalculatorResult {
   state: PriceCalculatorState;
   setBaseId: (id: string) => void;
@@ -78,17 +91,26 @@ export function usePriceCalculator(config: CategoryPricingConfig): PriceCalculat
     setQuantityState(safeQty);
   };
 
+  const basePrice = getBasePrice(selectedBase, sizeId);
   const addonsTotal = selectedAddons.reduce((sum, a) => sum + a.price, 0);
-  const unitSubtotal = (selectedBase?.price ?? 0) + (selectedSize?.price ?? 0) + addonsTotal;
+  const unitSubtotal = basePrice + (selectedSize?.price ?? 0) + addonsTotal;
   const total = unitSubtotal * quantity;
 
   const breakdown: BreakdownLine[] = useMemo(() => {
     const lines: BreakdownLine[] = [];
     if (selectedSize) lines.push({ label: `Size: ${selectedSize.label}`, amount: selectedSize.price });
-    if (selectedBase) lines.push({ label: `Base: ${selectedBase.label}`, amount: selectedBase.price });
+    if (selectedBase) {
+      const amount = getBasePrice(selectedBase, sizeId);
+      const label =
+        selectedBase.priceBySize && !sizeId
+          ? `Base: ${selectedBase.label} (select size to price)`
+          : `Base: ${selectedBase.label}`;
+      lines.push({ label, amount });
+    }
     selectedAddons.forEach((a) => lines.push({ label: a.label, amount: a.price }));
     return lines;
-  }, [selectedBase, selectedSize, selectedAddons]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedBase, selectedSize, selectedAddons, sizeId]);
 
   return {
     state: { baseId, sizeId, addonIds, quantity },

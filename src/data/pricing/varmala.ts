@@ -7,8 +7,24 @@ export const varmalaPricing: CategoryPricingConfig = {
 
   baseStepLabel: "Base Frame",
   bases: [
-    { id: "acrylic", label: "Acrylic Frame", price: 0 },
     { id: "wooden", label: "Wooden Frame", price: 500 },
+    {
+      id: "resin",
+      label: "Resin Base (Premium)",
+      price: 0,
+      // Solid resin base — no flat add-on, it costs more resin + curing
+      // time as the piece gets bigger, so the surcharge scales with size
+      // (~80% of that size's base price). Keyed by sizes[].id below.
+      priceBySize: {
+        "8x8": 700,
+        "12x12": 1400,
+        "12x16": 2100,
+        "15x15": 2400,
+        "15x18": 2700,
+        "18x18": 3600,
+        "20x20": 4800,
+      },
+    },
     { id: "teakwood", label: "Teakwood Frame", price: 1200 },
     { id: "led", label: "LED Base Stand", price: 1800 },
   ],
